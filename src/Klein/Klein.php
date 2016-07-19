@@ -330,7 +330,7 @@ class Klein
      * @param string|array $method    HTTP Method to match
      * @param string $path              Route URI path to match
      * @param callable $callback        Callable callback method to execute on route match
-     * @return Route
+     * @return $this
      */
     public function respond($method, $path = '*', $callback = null)
     {
@@ -344,7 +344,7 @@ class Klein
 
         $this->routes->add($route);
 
-        return $route;
+        return $this;
     }
 
     /**
@@ -1222,5 +1222,15 @@ class Klein
         );
 
         return $this->respond('PATCH', $path, $callback);
+    }
+    
+    /**
+     * Function for add route to named collection
+     * 
+     * @author Sevans Duamel
+     * @param string $name
+     */
+    public function bind($name) {
+        
     }
 }
