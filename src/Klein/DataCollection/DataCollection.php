@@ -432,4 +432,14 @@ class DataCollection implements IteratorAggregate, ArrayAccess, Countable
     {
         return count($this->attributes);
     }
+    
+    /**
+     * Return last inserted attributes
+     * 
+     * @return mixed
+     */ 
+    public function getLastInserted()
+    {
+        return $this->get($this->count()-1);
+    }
 }
