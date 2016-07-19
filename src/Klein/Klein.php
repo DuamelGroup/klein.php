@@ -1231,6 +1231,8 @@ class Klein
      * @param string $name
      */
     public function bind($name) {
-        
+        $route = $this->routes->getLastInserted();
+        //@todo: add check to unique name
+        $route->setName($name);
     }
 }
